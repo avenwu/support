@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DeepInAndroid</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="install_shortcut">Shortcut install/uninstall</string>
+    <string name="widget_drawerframe">Widget DrawerFrame</string>
+    <string name="widget_refresh_layout">Widget RefreshLayout</string>
+    <string name="quadratic_bezier_polygon">Quadratic Bezier Polygon</string>
+    <string name="tag_input">Input Tag EditView</string>
+    <string name="get_tags">Get Tags</string>
+</resources>

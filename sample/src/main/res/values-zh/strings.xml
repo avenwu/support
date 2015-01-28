@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Android深入解析</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">设置</string>
+    <string name="install_shortcut">安装、卸载快捷方式</string>
+    <string name="widget_drawerframe">侧滑控件</string>
+    <string name="widget_refresh_layout">下拉控件</string>
+    <string name="quadratic_bezier_polygon">二次贝塞尔曲线</string>
+    <string name="tag_input">标签输入框</string>
+</resources>
