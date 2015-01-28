@@ -1,8 +1,8 @@
 package com.avenwu.deepinandroid;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.avenwu.imageview.IndexImageView;
+
+import net.avenwu.support.widget.DrawerFrame;
 
 /**
  * Created by Chaobin Wu on 2014/10/10.

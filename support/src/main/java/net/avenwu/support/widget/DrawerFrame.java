@@ -1,4 +1,7 @@
-package com.avenwu.deepinandroid;
+package net.avenwu.support.widget;
+
+import net.avenwu.support.BuildConfig;
+import net.avenwu.support.R;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -19,7 +19,7 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent">-->
 
-        <net.avenwu.support.widget.TagInputLayout
+        <net.avenwu.support.widget.TagFlowLayout
             android:id="@+id/tags"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
