@@ -10,4 +10,6 @@
     <string name="quadratic_bezier_polygon">Quadratic Bezier Polygon</string>
     <string name="tag_input">Input Tag EditView</string>
     <string name="get_tags">Get Tags</string>
+    <string name="busevent">Custom BusEvent</string>
+    <string name="click_send_message">Click to send message</string>
 </resources>

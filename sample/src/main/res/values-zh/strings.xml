@@ -9,4 +9,7 @@
     <string name="widget_refresh_layout">下拉控件</string>
     <string name="quadratic_bezier_polygon">二次贝塞尔曲线</string>
     <string name="tag_input">标签输入框</string>
+    <string name="busevent">自定义BusEvent</string>
+    <string name="click_send_message">单击发送消息</string>
+
 </resources>

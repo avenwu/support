@@ -24,6 +24,7 @@
         <activity android:name=".QQDraggingCircleDemo"/>
         <activity android:name=".TagInputDemo"
             android:windowSoftInputMode="stateVisible"/>
+        <activity android:name=".BusEventDemo"/>
     </application>
 
 </manifest>

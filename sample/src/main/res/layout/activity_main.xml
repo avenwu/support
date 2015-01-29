@@ -13,10 +13,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            style="@style/DemoItemStyle"
-            android:text="@string/install_shortcut"
-            android:onClick="showShortcut"/>
+        <!--<Button-->
+            <!--style="@style/DemoItemStyle"-->
+            <!--android:text="@string/install_shortcut"-->
+            <!--android:onClick="showShortcut"/>-->
 
         <Button
             style="@style/DemoItemStyle"
@@ -30,12 +30,14 @@
         <Button
             style="@style/DemoItemStyle"
             android:text="@string/quadratic_bezier_polygon"
-            android:tag="com.avenwu.deepinandroid.QQDraggingCircleDemo"
-            android:onClick="openActivity"/>
+            android:tag="com.avenwu.deepinandroid.QQDraggingCircleDemo"/>
         <Button
             style="@style/DemoItemStyle"
             android:text="@string/tag_input"
-            android:tag="com.avenwu.deepinandroid.TagInputDemo"
-            android:onClick="openActivity"/>
+            android:tag="com.avenwu.deepinandroid.TagInputDemo"/>
+        <Button
+            style="@style/DemoItemStyle"
+            android:text="@string/busevent"
+            android:tag="com.avenwu.deepinandroid.BusEventDemo"/>
     </LinearLayout>
 </ScrollView>
