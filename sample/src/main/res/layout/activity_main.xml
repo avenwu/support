@@ -39,5 +39,9 @@
             style="@style/DemoItemStyle"
             android:text="@string/busevent"
             android:tag="com.avenwu.deepinandroid.BusEventDemo"/>
+        <Button
+            style="@style/DemoItemStyle"
+            android:text="@string/colorfilter"
+            android:tag="com.avenwu.deepinandroid.ColorFilterDemo"/>
     </LinearLayout>
 </ScrollView>

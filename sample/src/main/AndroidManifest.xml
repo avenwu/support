@@ -25,6 +25,7 @@
         <activity android:name=".TagInputDemo"
             android:windowSoftInputMode="stateVisible"/>
         <activity android:name=".BusEventDemo"/>
+        <activity android:name=".ColorFilterDemo"/>
     </application>
 
 </manifest>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="porter_duff_array">
+        <item>CLEAR</item>
+        <item>SRC</item>
+        <item>DST</item>
+        <item>SRC_OVER</item>
+        <item>DST_OVER</item>
+        <item>SRC_IN</item>
+        <item>DST_IN</item>
+        <item>SRC_OUT</item>
+        <item>DST_OUT</item>
+        <item>SRC_ATOP</item>
+        <item>DST_ATOP</item>
+        <item>XOR</item>
+        <item>DARKEN</item>
+        <item>LIGHTEN</item>
+        <item>MULTIPLY</item>
+        <item>SCREEN</item>
+        <item>ADD</item>
+        <item>OVERLAY</item>
+    </string-array>
+</resources>

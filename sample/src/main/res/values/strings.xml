@@ -12,4 +12,5 @@
     <string name="get_tags">Get Tags</string>
     <string name="busevent">Custom BusEvent</string>
     <string name="click_send_message">Click to send message</string>
+    <string name="colorfilter">ColorFilter</string>
 </resources>
