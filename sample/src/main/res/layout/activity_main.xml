@@ -43,5 +43,9 @@
             style="@style/DemoItemStyle"
             android:text="@string/colorfilter"
             android:tag="com.avenwu.deepinandroid.ColorFilterDemo"/>
+        <Button
+            style="@style/DemoItemStyle"
+            android:text="@string/title_activity_markdown_demo"
+            android:tag="com.avenwu.deepinandroid.MarkdownDemo"/>
     </LinearLayout>
 </ScrollView>

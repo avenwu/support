@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.avenwu.deepinandroid" >
+    package="com.avenwu.deepinandroid">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,15 +18,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".ShortcutDemo" />
-
+        <activity android:name=".RefreshWidgetActivity"></activity>
+        <activity android:name=".QQDraggingCircleDemo" />
         <activity
-            android:name=".RefreshWidgetActivity">
-        </activity>
-        <activity android:name=".QQDraggingCircleDemo"/>
-        <activity android:name=".TagInputDemo"
-            android:windowSoftInputMode="stateVisible"/>
-        <activity android:name=".BusEventDemo"/>
-        <activity android:name=".ColorFilterDemo"/>
+            android:name=".TagInputDemo"
+            android:windowSoftInputMode="stateVisible" />
+        <activity android:name=".BusEventDemo" />
+        <activity android:name=".ColorFilterDemo" />
+        <activity
+            android:name=".MarkdownDemo"
+            android:label="@string/title_activity_markdown_demo"/>
     </application>
 
 </manifest>

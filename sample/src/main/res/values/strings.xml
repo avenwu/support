@@ -13,4 +13,9 @@
     <string name="busevent">Custom BusEvent</string>
     <string name="click_send_message">Click to send message</string>
     <string name="colorfilter">ColorFilter</string>
+    <string name="title_activity_markdown_demo">Markdown</string>
+
+
+    <string name="title_section1">Edit</string>
+    <string name="title_section2">Preview</string>
 </resources>
