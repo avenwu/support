@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.lang.reflect.Field;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -23,6 +25,9 @@ public class ColorFilterDemo extends ActionBarActivity implements AdapterView.On
     Spinner mPorterDuffSpinner;
     @InjectView(R.id.iv_preview)
     ImageView mPreviewView;
+    @InjectView(R.id.iv_image)
+    ImageView mImage;
+    static final int MASK_HINT_COLOR = 0x99000000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +37,25 @@ public class ColorFilterDemo extends ActionBarActivity implements AdapterView.On
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.porter_duff_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        mPorterDuffSpinner.setPrompt("Select the PorterDuff");
         mPorterDuffSpinner.setAdapter(adapter);
         mPorterDuffSpinner.setOnItemSelectedListener(this);
+        int defaultSelection = 0;
+        try {
+            Field field = PorterDuff.Mode.class.getDeclaredField("nativeInt");
+            field.setAccessible(true);
+            defaultSelection = field.getInt(PorterDuff.Mode.DARKEN);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        mPorterDuffSpinner.setSelection(defaultSelection);
     }
 
-    @SuppressWarnings("Unchecked")
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         PorterDuff.Mode mode = PorterDuff.Mode.class.getEnumConstants()[position];
         mPreviewView.setColorFilter(Color.GREEN, mode);
+        mImage.setColorFilter(MASK_HINT_COLOR, mode);
         Toast.makeText(this, "Select " + mode, Toast.LENGTH_SHORT).show();
     }
 
