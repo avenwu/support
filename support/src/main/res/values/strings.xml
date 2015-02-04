@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Support</string>
+    <string-array name="demo_array">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+    </string-array>
 </resources>

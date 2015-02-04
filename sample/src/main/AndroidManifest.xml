@@ -28,6 +28,7 @@
         <activity
             android:name=".MarkdownDemo"
             android:label="@string/title_activity_markdown_demo"/>
+        <activity android:name=".StyledRadioButtonDemo"/>
     </application>
 
 </manifest>

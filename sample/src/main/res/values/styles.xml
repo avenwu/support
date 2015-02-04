@@ -15,4 +15,13 @@
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:onClick">openActivity</item>
     </style>
+
+    <style name="FlatRadioButtonStyle">
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textColor">@color/radio_button_color</item>
+        <item name="android:padding">5dp</item>
+    </style>
 </resources>
