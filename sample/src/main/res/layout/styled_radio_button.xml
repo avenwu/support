@@ -1,90 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/holo_red_dark"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="RadioGroup with custom style"
-        android:textColor="@android:color/white"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
+        android:id="@+id/ll_container">
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
-
-        <RadioButton
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A"
-            android:id="@+id/radioButton"
-            style="@style/FlatRadioButtonStyle"
-            android:background="@drawable/flat_round_shape_left" />
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:background="@android:color/holo_red_dark">
 
-        <RadioButton
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RadioGroup with custom style"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A"
+                    android:id="@+id/radioButton"
+                    style="@style/FlatRadioButtonStyle"
+                    android:background="@drawable/flat_round_shape_left" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B"
+                    android:id="@+id/radioButton2"
+                    android:checked="true"
+                    style="@style/FlatRadioButtonStyle"
+                    android:background="@drawable/flat_round_shape_middle" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="C"
+                    android:id="@+id/radioButton3"
+                    style="@style/FlatRadioButtonStyle"
+                    android:background="@drawable/flat_round_shape_right" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Custom FlatTabGroup extend RadioGroup"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="B"
-            android:id="@+id/radioButton2"
-            android:checked="true"
-            style="@style/FlatRadioButtonStyle"
-            android:background="@drawable/flat_round_shape_middle" />
+            android:padding="20dp"
+            android:background="@android:color/holo_red_dark">
 
-        <RadioButton
-            android:layout_width="wrap_content"
+            <net.avenwu.support.widget.FlatTabGroup
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:tab_border_width="1dp"
+                app:tab_border_color="@android:color/white"
+                app:tab_items="@array/demo_array"
+                app:tab_radius="5dp"
+                app:tab_textSize="16sp"
+                app:tab_textColor="@color/radio_button_color"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="C"
-            android:id="@+id/radioButton3"
-            style="@style/FlatRadioButtonStyle"
-            android:background="@drawable/flat_round_shape_right" />
-    </RadioGroup>
+            android:padding="20dp"
+            android:background="@color/tab_orange">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Custom FlatTabGroup extend RadioGroup"
-        android:textColor="@android:color/white"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
+            <net.avenwu.support.widget.FlatTabGroup
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:tab_border_width="1dp"
+                app:tab_border_color="@android:color/white"
+                app:tab_items="@array/demo_array"
+                app:tab_radius="5dp"
+                app:tab_textSize="16sp"
+                app:tab_textColor="@color/radio_button_color_orange"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
 
-    <net.avenwu.support.widget.FlatTabGroup
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        app:edgeWidth="1dp"
-        app:edgeColor="@android:color/white"
-        app:items="@array/demo_array"
-        app:innerTextColor="@color/radio_button_color"
-        android:padding="5dp">
+        </FrameLayout>
 
-        <!--<net.avenwu.support.widget.FlatTab-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="A"-->
-        <!--android:textColor="@color/radio_button_color"-->
-        <!--android:layout_weight="1" />-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:background="@color/tab_purple">
 
-        <!--<net.avenwu.support.widget.FlatTab-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="B"-->
-        <!--android:textColor="@color/radio_button_color"-->
-        <!--android:checked="true"-->
-        <!--android:layout_weight="1" />-->
+            <net.avenwu.support.widget.FlatTabGroup
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:tab_border_width="1dp"
+                app:tab_border_color="@android:color/white"
+                app:tab_items="@array/demo_array"
+                app:tab_radius="5dp"
+                app:tab_textSize="16sp"
+                app:tab_textColor="@color/radio_button_color_purple"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
 
-        <!--<net.avenwu.support.widget.FlatTab-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="C"-->
-        <!--android:textColor="@color/radio_button_color"-->
-        <!--android:layout_weight="1" />-->
-    </net.avenwu.support.widget.FlatTabGroup>
+        </FrameLayout>
 
-</LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:background="@color/tab_blue">
+
+            <net.avenwu.support.widget.FlatTabGroup
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:tab_border_width="1dp"
+                app:tab_border_color="@android:color/white"
+                app:tab_items="@array/demo_array"
+                app:tab_radius="5dp"
+                app:tab_textSize="16sp"
+                app:tab_textColor="@color/radio_button_color_blue"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:background="@color/tab_light_blue">
+
+            <net.avenwu.support.widget.FlatTabGroup
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:tab_border_width="1dp"
+                app:tab_border_color="@android:color/white"
+                app:tab_items="@array/demo_array"
+                app:tab_radius="5dp"
+                app:tab_textSize="16sp"
+                app:tab_textColor="@color/radio_button_color_light_blue"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:background="@color/tab_green">
+
+            <net.avenwu.support.widget.FlatTabGroup
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:tab_border_width="1dp"
+                app:tab_border_color="@android:color/white"
+                app:tab_items="@array/demo_array"
+                app:tab_radius="5dp"
+                app:tab_textSize="16sp"
+                app:tab_textColor="@color/radio_button_color_green"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</ScrollView>

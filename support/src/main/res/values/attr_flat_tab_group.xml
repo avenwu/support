@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="FlatTabGroup">
-        <attr name="items" format="reference" />
-        <attr name="edgeWidth" format="dimension|reference" />
-        <attr name="edgeColor" format="color|reference" />
-        <attr name="innerTextColor" format="reference"/>
+        <attr name="tab_items" format="reference" />
+        <attr name="tab_border_width" format="dimension|reference" />
+        <attr name="tab_border_color" format="color|reference" />
+        <attr name="tab_radius" format="dimension|reference" />
+        <attr name="tab_textColor" format="dimension|reference" />
+        <attr name="tab_textSize" format="dimension|reference" />
     </declare-styleable>
 </resources>

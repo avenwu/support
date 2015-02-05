@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tab_blue">#283593</color>
+    <color name="tab_light_blue">#03a9f4</color>
+    <color name="tab_purple">#9c27b0</color>
+    <color name="tab_green">#056f00</color>
+    <color name="tab_orange">#ff9800</color>
+</resources>

@@ -28,29 +28,40 @@ public class FlatTabGroup extends RadioGroup {
     private int mRadius;
     private int mStroke;
     private int mHighlightColor;
+    private String[] mItemString;
+    private float mTextSize;
+    private ColorStateList mTextColor;
 
     public FlatTabGroup(Context context, AttributeSet attrs) {
         super(context, attrs);
         setOrientation(HORIZONTAL);
         setGravity(Gravity.CENTER_VERTICAL);
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.FlatTabGroup);
-        mHighlightColor = array.getColor(R.styleable.FlatTabGroup_edgeColor, Color.WHITE);
-        mStroke = array.getDimensionPixelSize(R.styleable.FlatTabGroup_edgeWidth, 2);
-        ColorStateList colorStateList = array.getColorStateList(R.styleable.FlatTabGroup_innerTextColor);
+        mHighlightColor = array.getColor(R.styleable.FlatTabGroup_tab_border_color, Color.WHITE);
+        mStroke = array.getDimensionPixelSize(R.styleable.FlatTabGroup_tab_border_width, 2);
+        mRadius = array.getDimensionPixelOffset(R.styleable.FlatTabGroup_tab_radius, 5);
+        mTextColor = array.getColorStateList(R.styleable.FlatTabGroup_tab_textColor);
+        mTextSize = array.getDimensionPixelSize(R.styleable.FlatTabGroup_tab_textSize, 14);
         array.recycle();
-        mRadius = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, getContext().getResources().getDisplayMetrics());
-        int id = array.getResourceId(R.styleable.FlatTabGroup_items, 0);
-        String[] items = isInEditMode() ? new String[]{"TAB A", "TAB B", "TAB C"} : context.getResources().getStringArray(id);
-        for (int i = 0; i < items.length; i++) {
-            String text = items[i];
+        int id = array.getResourceId(R.styleable.FlatTabGroup_tab_items, 0);
+        mItemString = isInEditMode() ? new String[]{"TAB A", "TAB B", "TAB C"} : context.getResources().getStringArray(id);
+        generateTabView(context, attrs);
+        updateChildBackground();
+    }
+
+    private void generateTabView(Context context, AttributeSet attrs) {
+        if (mItemString == null) {
+            return;
+        }
+        for (String text : mItemString) {
             RadioButton button = new RadioButton(context, attrs);
             button.setGravity(Gravity.CENTER);
             button.setButtonDrawable(android.R.color.transparent);
             button.setText(text);
-            button.setTextColor(colorStateList);
+            button.setTextColor(mTextColor);
+            button.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
             addView(button, new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1));
         }
-        updateChildBackground();
     }
 
     @Override
