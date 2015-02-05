@@ -20,4 +20,9 @@
         <item>ADD</item>
         <item>OVERLAY</item>
     </string-array>
+    <string-array name="demo_array">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+    </string-array>
 </resources>
