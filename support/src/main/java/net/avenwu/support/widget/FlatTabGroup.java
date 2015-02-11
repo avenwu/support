@@ -78,6 +78,10 @@ public class FlatTabGroup extends RadioGroup implements RadioGroup.OnCheckedChan
         mTabCheckedListener = listener;
     }
 
+    public void setSelection(int position) {
+        check(getChildAt(position).getId());
+    }
+
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         if (mListener != null) {
