@@ -446,10 +446,22 @@ public class TagFlowLayout extends ViewGroup
         return new CharSequence[]{};
     }
 
-    public void setTagArray(CharSequence[] tags) {
+    public void setTagArray(CharSequence... tags) {
         for (CharSequence tag : tags) {
             generateTag(tag);
         }
+    }
+
+    public void clearTags() {
+        while (getChildCount() > 1) {
+            removeAllViews();
+            addView(mInputView);
+        }
+    }
+
+    public void setInputable(boolean enable){
+        mInputView.setVisibility(enable ? View.VISIBLE : View.GONE);
+        mInputView.setEnabled(enable);
     }
 
     /**
