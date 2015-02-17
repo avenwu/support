@@ -308,6 +308,15 @@ public class TagFlowLayout extends ViewGroup
     }
 
     /**
+     * Auto generate the last input content as tag label
+     */
+    public void autoComplete() {
+        if (!TextUtils.isEmpty(mInputView.getText().toString())) {
+            generateTag(null);
+        }
+    }
+
+    /**
      * can be null
      */
     private void generateTag(CharSequence tag) {
@@ -459,7 +468,7 @@ public class TagFlowLayout extends ViewGroup
         }
     }
 
-    public void setInputable(boolean enable){
+    public void setInputable(boolean enable) {
         mInputView.setVisibility(enable ? View.VISIBLE : View.GONE);
         mInputView.setEnabled(enable);
     }
@@ -475,12 +484,12 @@ public class TagFlowLayout extends ViewGroup
         public int getTextSize();
 
         /**
-         * Padding on left, top, right, bottom in unit of dip
+         * Padding on mLeftView, top, right, bottom in unit of dip
          */
         public int[] getPadding();
 
         /**
-         * Margin on left, top, right, bottom in unit of dip
+         * Margin on mLeftView, top, right, bottom in unit of dip
          */
         public int[] getMargin();
 

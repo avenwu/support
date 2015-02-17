@@ -69,6 +69,6 @@ public class DrawerDemoFragment extends Fragment {
 				Toast.makeText(getActivity(), "Image cliked", Toast.LENGTH_SHORT).show();
 			}
 		});
-		return super.onCreateView(inflater, container, savedInstanceState);
+		return view;
 	}
 }

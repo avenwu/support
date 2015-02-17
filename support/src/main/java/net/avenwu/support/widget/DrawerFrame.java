@@ -107,7 +107,7 @@ public class DrawerFrame extends FrameLayout {
 				if (dx != 0) {
 					left.setVisibility(VISIBLE);
 					float x = oldx + dx;
-					d("onTouchEvent", "move, oldx=" + oldx + ", dx=" + dx + ", left=" +
+					d("onTouchEvent", "move, oldx=" + oldx + ", dx=" + dx + ", mLeftView=" +
 							left.getLeft() + ", right=" + left.getRight() + ", getX=" + event.getX() + ", mSrcX=" + mSrcX);
 					d("onTouchEvent", "before x=" + x);
 					if (MENU_WIDTH < x) {
@@ -189,7 +189,7 @@ public class DrawerFrame extends FrameLayout {
 			int x = scroller.getCurrX();
 			d("computeScroll", "try scroll, oldx=" + oldx + ", x=" + x);
 			if (oldx != x) {
-				//this can only effect on the content view inside of left
+				//this can only effect on the content view inside of mLeftView
 				left.scrollTo(x, 0);
 				left.invalidate();
 			}

@@ -2,6 +2,8 @@ package com.avenwu.deepinandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 
@@ -34,7 +36,27 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void openActivity(View view) throws ClassNotFoundException {
-        startActivity(new Intent(this, Class.forName((String) view.getTag())));
+    public void openActivity(View view) {
+        try {
+            startActivity(new Intent(this, Class.forName((String) view.getTag())));
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
+
+    public void openFragment(View view) {
+        try {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, (Fragment) Class.forName((String) view.getTag()).newInstance(), "fragment")
+                    .addToBackStack(null)
+                    .commitAllowingStateLoss();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
