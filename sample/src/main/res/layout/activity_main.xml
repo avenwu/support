@@ -2,10 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -16,22 +12,28 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
 
             <!--<Button-->
             <!--style="@style/DemoItemStyle"-->
             <!--android:text="@string/install_shortcut"-->
             <!--android:onClick="showShortcut"/>-->
 
-            <Button
-                style="@style/DemoItemStyle"
-                android:text="@string/widget_drawerframe"
-                android:onClick="showDrawerFrame" />
+            <!--<Button-->
+                <!--style="@style/DemoItemStyle"-->
+                <!--android:text="@string/widget_drawerframe"-->
+                <!--android:onClick="openFragment" -->
+                <!--android:tag="com.avenwu.deepinandroid.DrawerDemoFragment" />-->
 
             <Button
                 style="@style/DemoItemStyle"
                 android:text="@string/widget_refresh_layout"
-                android:onClick="showRefreshLayout" />
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.RefreshDemoFragment" />
 
             <Button
                 style="@style/DemoItemStyle"
@@ -70,7 +72,7 @@
                 android:tag="com.avenwu.deepinandroid.SlideMenuFragment" />
             <Button
                 style="@style/DemoItemStyle"
-                android:text="SlidePanel Demo"
+                android:text="自定义ResideMenu"
                 android:tag="com.avenwu.deepinandroid.SlidePanelDemo" />
         </LinearLayout>
     </FrameLayout>

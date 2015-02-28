@@ -24,16 +24,16 @@ public class MainActivity extends ActionBarActivity {
 
     @PrintMe
     public void showDrawerFrame(View view) {
-        Intent intent = new Intent(this, RefreshWidgetActivity.class);
-        intent.putExtra("fragment", DrawerDemoFragment.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, RefreshWidgetActivity.class);
+//        intent.putExtra("fragment", DrawerDemoFragment.class);
+//        startActivity(intent);
     }
 
     @PrintMe
     public void showRefreshLayout(View view) {
-        Intent intent = new Intent(this, RefreshWidgetActivity.class);
-        intent.putExtra("fragment", RefreshDemoFragment.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, RefreshWidgetActivity.class);
+//        intent.putExtra("fragment", RefreshDemoFragment.class);
+//        startActivity(intent);
     }
 
     public void openActivity(View view) {

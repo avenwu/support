@@ -11,5 +11,12 @@
     <string name="tag_input">标签输入框</string>
     <string name="busevent">自定义BusEvent</string>
     <string name="click_send_message">单击发送消息</string>
+    <string name="colorfilter">ColorFilter</string>
+    <string name="title_activity_markdown_demo">Markdown编辑</string>
+    <string name="flat_button">仿iOS Segmented Control</string>
+    <string name="slide_menu">修复版策划控件</string>
 
+
+    <string name="title_section1">编辑</string>
+    <string name="title_section2">预览</string>
 </resources>

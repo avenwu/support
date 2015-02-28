@@ -21,9 +21,6 @@ import java.util.Map;
  */
 public class RefreshDemoFragment extends Fragment {
 
-	public RefreshDemoFragment() {
-	}
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		RefreshLayout view = new RefreshLayout(getActivity());
