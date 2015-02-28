@@ -29,6 +29,8 @@
             android:name=".MarkdownDemo"
             android:label="@string/title_activity_markdown_demo"/>
         <activity android:name=".StyledRadioButtonDemo"/>
+       <activity android:name=".SlidePanelDemo"
+           android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 
 </manifest>

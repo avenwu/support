@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.avenwu.support.widget.CustomSlidePanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/skin_drawer_bg_l">
+
+    <!--<ListView-->
+    <!--android:id="@+id/lv_memu_list"-->
+    <!--android:layout_width="260dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@null" />-->
+    <FrameLayout
+        android:layout_width="270dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/skin_drawer_l" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Container to fill content"
+            android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceLarge" />
+    </FrameLayout>
+</net.avenwu.support.widget.CustomSlidePanelLayout>

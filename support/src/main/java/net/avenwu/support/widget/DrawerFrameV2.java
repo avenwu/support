@@ -1,6 +1,11 @@
 package net.avenwu.support.widget;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -11,6 +16,7 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
+import android.widget.ScrollView;
 import android.widget.Scroller;
 
 import net.avenwu.support.R;
@@ -50,6 +56,7 @@ public class DrawerFrameV2 extends FrameLayout {
                 getResources().getDisplayMetrics());
         ViewConfiguration configuration = ViewConfiguration.get(getContext());
         mTouchSlop = configuration.getScaledTouchSlop();
+        mShadowLeft = getResources().getDrawable(android.R.drawable.ic_media_play);
     }
 
     @Override
@@ -164,6 +171,39 @@ public class DrawerFrameV2 extends FrameLayout {
         }
     }
 
+    Drawable mShadowLeft;// = new ColorDrawable(Color.RED);
+    private static final int DEFAULT_SCRIM_COLOR = 0x99000000;
+    private int mScrimColor = DEFAULT_SCRIM_COLOR;
+    private float mScrimOpacity;
+    private Paint mScrimPaint = new Paint();
+    float alpha;
+
+  /*  @Override
+    protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
+        boolean result = super.drawChild(canvas, child, drawingTime);
+
+        if (child.getId() == R.id.main) {
+            int clipLeft = 0, clipRight = getWidth();
+            final int baseAlpha = (mScrimColor & 0xff000000) >>> 24;
+
+//            final int imag = (int) (baseAlpha * mScrimOpacity);
+//            final int color = imag << 24 | (mScrimColor & 0xffffff);
+            mScrimPaint.setColor(Color.argb((int) (255 * alpha * 0xff), 0, 0, 0));
+            canvas.drawRect(clipLeft, 0, clipRight, getHeight(), mScrimPaint);
+        } else if (child.getId() == R.id.menu) {
+            final int shadowWidth = mShadowLeft.getIntrinsicWidth();
+            final int childRight = child.getRight();
+            final int drawerPeekDistance = mLeftViewWidth;
+            alpha =
+                    Math.max(0, Math.min((float) childRight / drawerPeekDistance, 1.f));
+            mShadowLeft.setBounds(childRight, child.getTop(),
+                    childRight + shadowWidth, child.getBottom());
+            mShadowLeft.setAlpha((int) (0xff * alpha));
+            mShadowLeft.draw(canvas);
+        }
+        return result;
+    }*/
+
     boolean isContentView(View child) {
         return ((LayoutParams) child.getLayoutParams()).gravity == Gravity.NO_GRAVITY;
     }
@@ -206,15 +246,18 @@ public class DrawerFrameV2 extends FrameLayout {
     @Override
     public void computeScroll() {
         if (mScroller.computeScrollOffset()) {
-            if (mLeftView.getLeft() != mScroller.getFinalX()) {
-                int cx = mScroller.getCurrX() - mLeftView.getLeft();
-                int dx = cx + mLeftView.getLeft();
+            int oldLeft = mLeftView.getLeft();
+            int left = mScroller.getCurrX();
+            if (oldLeft != mScroller.getFinalX()) {
+                int xOffset = left - oldLeft;
+                int dx = xOffset + oldLeft;
                 if (dx > 0) {
-                    cx = 0 - mLeftView.getLeft();
+                    xOffset = 0 - oldLeft;
                 } else if (dx < -mLeftViewWidth) {
-                    cx = -mLeftViewWidth - mLeftView.getLeft();
+                    xOffset = -mLeftViewWidth - oldLeft;
                 }
-                mLeftView.offsetLeftAndRight(cx);
+                mLeftView.offsetLeftAndRight(xOffset);
+                onScrollChanged(left, 0, oldLeft, 0);
             }
             invalidate();
         } else {
@@ -226,5 +269,20 @@ public class DrawerFrameV2 extends FrameLayout {
 //        if (BuildConfig.DEBUG) {
         Log.d(tag, text);
 //        }
+    }
+
+    /**
+     * This is called in response to an internal scroll in this view (i.e., the
+     * view scrolled its own contents). This is typically as a result of
+     * {@link #scrollBy(int, int)} or {@link #scrollTo(int, int)} having been
+     * called.
+     *
+     * @param l    Current horizontal scroll origin.
+     * @param t    Current vertical scroll origin.
+     * @param oldl Previous horizontal scroll origin.
+     * @param oldt Previous vertical scroll origin.
+     */
+    protected void onScrollChanged(int l, int t, int oldl, int oldt) {
+
     }
 }

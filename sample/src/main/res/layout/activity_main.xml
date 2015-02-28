@@ -68,6 +68,10 @@
                 android:onClick="openFragment"
                 android:text="@string/slide_menu"
                 android:tag="com.avenwu.deepinandroid.SlideMenuFragment" />
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="SlidePanel Demo"
+                android:tag="com.avenwu.deepinandroid.SlidePanelDemo" />
         </LinearLayout>
     </FrameLayout>
 </ScrollView>
