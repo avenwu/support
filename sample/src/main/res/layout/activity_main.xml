@@ -74,6 +74,11 @@
                 style="@style/DemoItemStyle"
                 android:text="自定义ResideMenu"
                 android:tag="com.avenwu.deepinandroid.SlidePanelDemo" />
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="长图分页加载"
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.LargeHeightImageDisplayFragment" />
         </LinearLayout>
     </FrameLayout>
 </ScrollView>
