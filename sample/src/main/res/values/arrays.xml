@@ -25,4 +25,8 @@
         <item>B</item>
         <item>C</item>
     </string-array>
+    <string-array name="exif_tab">
+        <item>Image on sdcard</item>
+        <item>Image inside assets</item>
+    </string-array>
 </resources>

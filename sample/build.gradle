@@ -28,4 +28,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.2'
     compile 'com.jakewharton:butterknife:6.0.0'
     compile 'com.github.avenwu:IndexImageView:1.0.1'
+    compile 'com.drewnoakes:metadata-extractor:2.7.2'
+
 }

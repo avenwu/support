@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:background="#fff">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <net.avenwu.support.widget.FlatTabGroup
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            app:tab_items="@array/exif_tab"
+            android:layout_height="40dp"
+            app:tab_border_width="1dp"
+            app:tab_border_color="@color/tab_green"
+            app:tab_radius="5dp"
+            app:tab_textSize="16sp"
+            app:tab_textColor="@color/tab_orange"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:text="Exif info" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:scaleType="centerInside"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="16dp" />
+
+
+    </LinearLayout>
+</ScrollView>

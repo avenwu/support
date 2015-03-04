@@ -99,6 +99,10 @@ public class FlatTabGroup extends RadioGroup implements RadioGroup.OnCheckedChan
         }
     }
 
+    /**
+     * use {@linkplain #setOnTabCheckedListener(net.avenwu.support.widget.FlatTabGroup.OnTabCheckedListener)} instead
+     */
+    @Deprecated()
     @Override
     public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
         mListener = listener;

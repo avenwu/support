@@ -79,6 +79,11 @@
                 android:text="长图分页加载"
                 android:onClick="openFragment"
                 android:tag="com.avenwu.deepinandroid.LargeHeightImageDisplayFragment" />
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="Exif信息"
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.ExifViewerFragment" />
         </LinearLayout>
     </FrameLayout>
 </ScrollView>
