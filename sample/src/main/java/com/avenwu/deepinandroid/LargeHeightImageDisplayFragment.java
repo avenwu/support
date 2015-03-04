@@ -74,12 +74,6 @@ public class LargeHeightImageDisplayFragment extends Fragment {
                         Log.d(TAG, "corptBitmap, " + corpRect.toString());
                         Bitmap corptBitmap = decoder.decodeRegion(corpRect, null);
                         publishProgress(corptBitmap);
-                        try {
-                            Log.d(TAG, "Sleep 2 seconds");
-                            Thread.sleep(2 * 1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
                     }
                     Log.d(TAG, "Image decode finished");
                 } catch (IOException e) {
