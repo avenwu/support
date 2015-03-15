@@ -33,6 +33,7 @@ public class CustomSlidePanelLayout extends SlidingPaneLayout implements Sliding
 
     public CustomSlidePanelLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        if (isInEditMode()) return;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             isCustomable = true;
             super.setPanelSlideListener(this);

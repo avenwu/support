@@ -4,10 +4,13 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.ColorRes;
+import android.view.View;
 import android.widget.AbsListView;
 import android.widget.EdgeEffect;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * Created by chaobin on 2/25/15.
@@ -72,6 +75,32 @@ public class ViewCompat {
             glow.setCallback(null); // free up any references
         } catch (final Exception ignored) {
             ignored.printStackTrace();
+        }
+    }
+
+    /**
+     * Remove the left space on ActionBar while using Toolbar as ActionBar
+     * Usage:
+     * {@code ViewCompat.cleanContentInset(getSupportActionBar().getCustomView());}
+     * <p/>
+     * Toolbar toolbar = (Toolbar) customView.getParent();
+     * toolbar.setContentInsetsAbsolute(0, 0);
+     *
+     * @param customView
+     */
+    public static void removeContentInsetOfToolbar(View customView) {
+        if (customView != null && customView.getParent().getClass().getCanonicalName().equals("android.support.v7.widget.Toolbar")) {
+            try {
+                Method setContentInsetsAbsolute = customView.getParent().getClass().getDeclaredMethod("setContentInsetsAbsolute", int.class, int.class);
+                setContentInsetsAbsolute.setAccessible(true);
+                setContentInsetsAbsolute.invoke(customView.getParent(), 0, 0);
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
