@@ -88,12 +88,13 @@ public class ViewCompat {
      *
      * @param customView
      */
-    public static void removeContentInsetOfToolbar(View customView) {
+    public static boolean removeContentInsetOfToolbar(View customView) {
         if (customView != null && customView.getParent().getClass().getCanonicalName().equals("android.support.v7.widget.Toolbar")) {
             try {
                 Method setContentInsetsAbsolute = customView.getParent().getClass().getDeclaredMethod("setContentInsetsAbsolute", int.class, int.class);
                 setContentInsetsAbsolute.setAccessible(true);
                 setContentInsetsAbsolute.invoke(customView.getParent(), 0, 0);
+                return true;
             } catch (NoSuchMethodException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {
@@ -102,5 +103,6 @@ public class ViewCompat {
                 e.printStackTrace();
             }
         }
+        return false;
     }
 }
