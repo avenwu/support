@@ -84,6 +84,16 @@
                 android:text="Exif信息"
                 android:onClick="openFragment"
                 android:tag="com.avenwu.deepinandroid.ExifViewerFragment" />
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="Gradient渐变"
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.GradientColorFragment" />
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="呼吸灯"
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.RippleFragment" />
         </LinearLayout>
     </FrameLayout>
 </ScrollView>

@@ -7,6 +7,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.avenwu.annotation.PrintMe;
 
@@ -41,7 +42,7 @@ public class MainActivity extends ActionBarActivity {
         try {
             startActivity(new Intent(this, Class.forName((String) view.getTag())));
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            error(e);
         }
     }
 
@@ -52,12 +53,16 @@ public class MainActivity extends ActionBarActivity {
                     .addToBackStack(null)
                     .commitAllowingStateLoss();
         } catch (InstantiationException e) {
-            e.printStackTrace();
+            error(e);
         } catch (IllegalAccessException e) {
-            e.printStackTrace();
+            error(e);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            error(e);
         }
     }
 
+    private void error(Exception e) {
+        e.printStackTrace();
+        Toast.makeText(this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+    }
 }
