@@ -93,7 +93,7 @@
                 style="@style/DemoItemStyle"
                 android:text="呼吸灯"
                 android:onClick="openFragment"
-                android:tag="com.avenwu.deepinandroid.RippleFragment" />
+                android:tag="com.avenwu.deepinandroid.BreathLightViewDemo" />
         </LinearLayout>
     </FrameLayout>
 </ScrollView>

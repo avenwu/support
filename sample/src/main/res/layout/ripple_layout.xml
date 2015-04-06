@@ -1,12 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff">
+    android:background="#fff"
+    android:clickable="false">
 
-    <net.avenwu.support.widget.BreathLightView xmlns:android="http://schemas.android.com/apk/res/android"
+    <net.avenwu.support.widget.BreathingLayout
+        android:id="@+id/custom"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="300dp"
+        app:autoStart="true"
+        app:rippleEndRadius="100dp"
+        app:rippleStartRadius="20dp"
+        app:rippleColor="@color/tab_orange">
 
-    </net.avenwu.support.widget.BreathLightView>
-</FrameLayout>
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Click to Play animation"
+            android:layout_gravity="bottom"
+            android:layout_margin="16dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="└(^o^)┘"
+            android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_gravity="center"
+            android:textColor="#fff"/>
+    </net.avenwu.support.widget.BreathingLayout>
+
+    <net.avenwu.support.widget.BreathingLayout
+        android:layout_width="450dp"
+        android:layout_height="100dp"
+        app:rippleEndRadius="50dp"
+        app:rippleTime="2000" />
+
+    <net.avenwu.support.widget.BreathingLayout
+        android:layout_width="100dp"
+        android:layout_height="250dp"
+        app:rippleColor="@color/tab_green"
+        app:rippleStartRadius="30dp"
+        app:rippleTime="1500"/>
+
+    <net.avenwu.support.widget.BreathingLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:rippleColor="@color/tab_purple" />
+</RelativeLayout>
