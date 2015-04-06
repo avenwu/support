@@ -6,6 +6,12 @@ Custom Android support library, include some useful utils and widget.
 
 
 ##实战案例
+###巧用BitmapShader
+通过为Paint画笔设置Shader，可以再画布上绘制许多有意思的东西
+
+![BitmapShader](http://7u2jir.com1.z0.glb.clouddn.com/bitmapshader_imageview.gif)
+
+
 ###Property自定义属性动画
 基于Property的自定义属性动画
 

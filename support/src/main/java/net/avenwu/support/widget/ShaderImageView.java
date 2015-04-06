@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.widget.ImageView;
 
 /**
+ * Reference: http://chiuki.github.io/android-shaders-filters/#/40
  * Created by chaobin on 2/3/15.
  */
 public class ShaderImageView extends ImageView {
