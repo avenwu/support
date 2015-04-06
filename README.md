@@ -6,6 +6,10 @@ Custom Android support library, include some useful utils and widget.
 
 
 ##实战案例
+###Property自定义属性动画
+基于Property的自定义属性动画
+
+![Property动画](http://7u2jir.com1.z0.glb.clouddn.com/property_animation.gif)
 
 ###自定义ResideMenu
 residemenu是是侧滑菜单的一种，但是视觉效果更特别，此次实现是基于android v4中SlidePanelLayout扩展而来，主要是为了减少非核心代码的开发工作。
