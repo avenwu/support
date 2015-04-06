@@ -1,11 +1,10 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/container"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -24,10 +23,10 @@
             <!--android:onClick="showShortcut"/>-->
 
             <!--<Button-->
-                <!--style="@style/DemoItemStyle"-->
-                <!--android:text="@string/widget_drawerframe"-->
-                <!--android:onClick="openFragment" -->
-                <!--android:tag="com.avenwu.deepinandroid.DrawerDemoFragment" />-->
+            <!--style="@style/DemoItemStyle"-->
+            <!--android:text="@string/widget_drawerframe"-->
+            <!--android:onClick="openFragment" -->
+            <!--android:tag="com.avenwu.deepinandroid.DrawerDemoFragment" />-->
 
             <Button
                 style="@style/DemoItemStyle"
@@ -70,30 +69,46 @@
                 android:onClick="openFragment"
                 android:text="@string/slide_menu"
                 android:tag="com.avenwu.deepinandroid.SlideMenuFragment" />
+
             <Button
                 style="@style/DemoItemStyle"
                 android:text="自定义ResideMenu"
                 android:tag="com.avenwu.deepinandroid.SlidePanelDemo" />
+
             <Button
                 style="@style/DemoItemStyle"
                 android:text="长图分页加载"
                 android:onClick="openFragment"
                 android:tag="com.avenwu.deepinandroid.LargeHeightImageDisplayFragment" />
+
             <Button
                 style="@style/DemoItemStyle"
                 android:text="Exif信息"
                 android:onClick="openFragment"
                 android:tag="com.avenwu.deepinandroid.ExifViewerFragment" />
+
             <Button
                 style="@style/DemoItemStyle"
                 android:text="Gradient渐变"
                 android:onClick="openFragment"
                 android:tag="com.avenwu.deepinandroid.GradientColorFragment" />
+
             <Button
                 style="@style/DemoItemStyle"
                 android:text="呼吸灯"
                 android:onClick="openFragment"
                 android:tag="com.avenwu.deepinandroid.BreathLightViewDemo" />
+
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="BitmapShader"
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.BitmapShaderFragment" />
         </LinearLayout>
-    </FrameLayout>
-</ScrollView>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

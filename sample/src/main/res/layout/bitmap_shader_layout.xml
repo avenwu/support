@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/image1"
+        android:scaleType="centerCrop" />
+
+    <net.avenwu.support.widget.ShaderImageView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/image1"
+        android:scaleType="centerCrop" />
+</LinearLayout>
