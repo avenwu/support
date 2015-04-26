@@ -104,6 +104,11 @@
                 android:text="BitmapShader"
                 android:onClick="openFragment"
                 android:tag="com.avenwu.deepinandroid.BitmapShaderFragment" />
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="WindowAnimation"
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.WindowAnimationFragment"/>
         </LinearLayout>
     </ScrollView>
 

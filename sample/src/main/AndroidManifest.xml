@@ -32,6 +32,7 @@
         <activity android:name=".StyledRadioButtonDemo"/>
        <activity android:name=".SlidePanelDemo"
            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".AnimatedSubActivity"/>
     </application>
 
 </manifest>
