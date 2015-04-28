@@ -33,6 +33,7 @@
        <activity android:name=".SlidePanelDemo"
            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name=".AnimatedSubActivity"/>
+        <activity android:name=".ScaleSubActivity" android:theme="@style/Transparent"/>
     </application>
 
 </manifest>

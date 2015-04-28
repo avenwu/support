@@ -82,6 +82,16 @@ public class WindowAnimationFragment extends Fragment {
                 }
             }
         });
+        view.findViewById(R.id.image3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int[] position = new int[2];
+                v.getLocationOnScreen(position);
+                startActivity(new Intent(getActivity(), ScaleSubActivity.class)
+                        .putExtra("left", position[0]).putExtra("top", position[1])
+                        .putExtra("width", v.getWidth()).putExtra("height", v.getHeight()));
+            }
+        });
     }
 
     int currentDrawable = 0;

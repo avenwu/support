@@ -24,4 +24,9 @@
         <item name="android:textColor">@color/radio_button_color</item>
         <item name="android:padding">5dp</item>
     </style>
+    <style name="Transparent">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>

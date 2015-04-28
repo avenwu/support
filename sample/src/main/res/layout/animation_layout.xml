@@ -27,4 +27,10 @@
         android:id="@+id/image2"
         android:layout_width="50dp"
         android:layout_height="80dp" />
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:src="@drawable/image1"
+        android:layout_gravity="right"/>
 </LinearLayout>
