@@ -108,7 +108,17 @@
                 style="@style/DemoItemStyle"
                 android:text="WindowAnimation"
                 android:onClick="openFragment"
-                android:tag="com.avenwu.deepinandroid.WindowAnimationFragment"/>
+                android:tag="com.avenwu.deepinandroid.WindowAnimationFragment"
+                android:visibility="gone"/>
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="Custom Tab"
+                android:tag="com.avenwu.deepinandroid.CustomTabActivity"
+                android:visibility="gone"/>
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="功能引导页"
+                android:tag="com.avenwu.deepinandroid.FeatureActivity"/>
         </LinearLayout>
     </ScrollView>
 

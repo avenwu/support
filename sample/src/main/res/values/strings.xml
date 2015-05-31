@@ -20,4 +20,12 @@
 
     <string name="title_section1">Edit</string>
     <string name="title_section2">Preview</string>
+    <string name="tab_1">Home</string>
+    <string name="tab_2">Hot</string>
+    <string name="tab_3">Activity</string>
+    <string name="tab_4">About</string>
+
+    <string name="title_activity_feature">FeatureActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

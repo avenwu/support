@@ -19,4 +19,7 @@
 
     <string name="title_section1">编辑</string>
     <string name="title_section2">预览</string>
+    <string name="page_1_text">重要信息一览无余,不必\n一一查阅邮件</string>
+    <string name="page_2_text">添加提醒,并使其在\n收件箱中置顶</string>
+    <string name="page_3_text">功能提示文案\nxxxxxx</string>
 </resources>
