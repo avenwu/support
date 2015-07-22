@@ -47,11 +47,11 @@ public class FlatTabGroup extends RadioGroup implements RadioGroup.OnCheckedChan
         mRadius = array.getDimensionPixelOffset(R.styleable.FlatTabGroup_tab_radius, 5);
         mTextColor = array.getColorStateList(R.styleable.FlatTabGroup_tab_textColor);
         mTextSize = array.getDimensionPixelSize(R.styleable.FlatTabGroup_tab_textSize, 14);
-        array.recycle();
         int id = array.getResourceId(R.styleable.FlatTabGroup_tab_items, 0);
         mItemString = isInEditMode() ? new String[]{"TAB A", "TAB B", "TAB C"} : context.getResources().getStringArray(id);
         generateTabView(context, attrs);
         updateChildBackground();
+        array.recycle();
         super.setOnCheckedChangeListener(this);
     }
 
