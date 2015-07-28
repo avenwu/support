@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import net.avenwu.support.util.ViewCompat;
+
 /**
  * Created by aven on 5/3/15.
  */
@@ -30,7 +32,7 @@ public class SimpleTabLayout extends LinearLayout {
                 .setOnTabClickListener(new SimpleTab.OnTabClickListener() {
                     @Override
                     public void onItemClick(View view, SimpleTab.Item item, int position) {
-                        Toast.makeText(getContext(), "Click " + position, Toast.LENGTH_SHORT).show();
+                        ViewCompat.makeText(getContext(), "Click " + position, Toast.LENGTH_SHORT).show();
                     }
                 })
                 .bind(this);

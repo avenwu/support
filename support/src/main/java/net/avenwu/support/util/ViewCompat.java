@@ -1,12 +1,18 @@
 package net.avenwu.support.util;
 
+import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.ColorRes;
+import android.support.annotation.StringRes;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.EdgeEffect;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import net.avenwu.support.R;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -104,5 +110,25 @@ public class ViewCompat {
             }
         }
         return false;
+    }
+
+    public static Toast makeText(Context context, String text, int duration) {
+        Toast result = new Toast(context);
+        View v = View.inflate(context, R.layout.custom_toast, null);
+        TextView tv = (TextView) v.findViewById(android.R.id.message);
+        tv.setText(text);
+        result.setView(v);
+        result.setDuration(duration);
+        return result;
+    }
+
+    public static Toast makeText(Context context, @StringRes int text, int duration) {
+        Toast result = new Toast(context);
+        View v = View.inflate(context, R.layout.custom_toast, null);
+        TextView tv = (TextView) v.findViewById(android.R.id.message);
+        tv.setText(text);
+        result.setView(v);
+        result.setDuration(duration);
+        return result;
     }
 }

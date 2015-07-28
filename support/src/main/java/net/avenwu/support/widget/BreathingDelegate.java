@@ -40,7 +40,7 @@ public class BreathingDelegate {
         mTarget.setDrawingCacheEnabled(false);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.BreathingLayout);
         mAutoStart = a.getBoolean(R.styleable.BreathingLayout_autoStart, true);
-        mRippleColor = a.getColor(R.styleable.BreathingLayout_rippleColor, 0xFF0099CC);
+        mRippleColor = a.getColor(R.styleable.BreathingLayout__rippleColor, 0xFF0099CC);
         mRippleRadius = a.getDimensionPixelSize(R.styleable.BreathingLayout_rippleStartRadius, -1);
         if (mRippleRadius == -1) {
             mRippleRadius = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getContext().getResources().getDisplayMetrics());
