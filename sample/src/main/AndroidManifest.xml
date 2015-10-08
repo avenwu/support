@@ -45,6 +45,10 @@
             android:label="@string/title_activity_feature"
             android:theme="@style/FullscreenTheme" >
         </activity>
+        <activity
+            android:name=".TypefaceActivity"
+            android:label="@string/title_activity_typeface" >
+        </activity>
     </application>
 
 </manifest>

@@ -6,6 +6,12 @@ Custom Android support library, include some useful utils and widget.
 
 
 ##实战案例
+###字体设置汇总
+通过不同方式实现自定义字体的设置，主要区别在于调用层
+
+![字体设置汇总](http://7u2jir.com1.z0.glb.clouddn.com/device-2015-10-08-173228.png)
+
+
 ###巧用BitmapShader
 通过为Paint画笔设置Shader，可以再画布上绘制许多有意思的东西
 

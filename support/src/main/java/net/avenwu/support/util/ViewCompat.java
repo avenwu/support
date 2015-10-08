@@ -1,7 +1,9 @@
 package net.avenwu.support.util;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.graphics.PorterDuff;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.ColorRes;
@@ -88,7 +90,7 @@ public class ViewCompat {
      * Remove the left space on ActionBar while using Toolbar as ActionBar
      * Usage:
      * {@code ViewCompat.cleanContentInset(getSupportActionBar().getCustomView());}
-     * <p/>
+     * <p>
      * Toolbar toolbar = (Toolbar) customView.getParent();
      * toolbar.setContentInsetsAbsolute(0, 0);
      *

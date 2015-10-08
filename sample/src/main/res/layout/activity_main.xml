@@ -119,6 +119,10 @@
                 style="@style/DemoItemStyle"
                 android:text="功能引导页"
                 android:tag="com.avenwu.deepinandroid.FeatureActivity"/>
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="字体设置"
+                android:tag="com.avenwu.deepinandroid.TypefaceActivity"/>
         </LinearLayout>
     </ScrollView>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="BreathingLayout">
-        <attr name="_rippleColor" format="color|reference" />
+        <attr name="rippleColor" format="color|reference" />
         <attr name="rippleEndRadius" format="dimension|reference" />
         <attr name="rippleStartRadius" format="dimension|reference" />
         <attr name="rippleTime" format="integer" />
