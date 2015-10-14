@@ -5,6 +5,11 @@ Custom Android support library, include some useful utils and widget.
 	support内是自定义的一些东西，sammple中包含support的实现demo样例，
 
 
+**Maven**
+为方便使用和研究，可以通过gradle依赖获取support库
+
+	compile 'com.github.avenwu:support:0.1.0'
+
 ##实战案例
 ###字体设置汇总
 通过不同方式实现自定义字体的设置，主要区别在于调用层
