@@ -10,10 +10,10 @@
         android:id="@+id/custom"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        app:autoStart="true"
-        app:rippleEndRadius="100dp"
-        app:rippleStartRadius="20dp"
-        app:rippleColor="@color/tab_orange">
+        app:_autoStart="true"
+        app:_rippleEndRadius="100dp"
+        app:_rippleStartRadius="20dp"
+        app:_rippleColor="@color/tab_orange">
 
         <Button
             android:id="@+id/btnPlay"
@@ -37,18 +37,18 @@
     <net.avenwu.support.widget.BreathingLayout
         android:layout_width="450dp"
         android:layout_height="100dp"
-        app:rippleEndRadius="50dp"
-        app:rippleTime="2000" />
+        app:_rippleEndRadius="50dp"
+        app:_rippleTime="2000" />
 
     <net.avenwu.support.widget.BreathingLayout
         android:layout_width="100dp"
         android:layout_height="250dp"
-        app:rippleColor="@color/tab_green"
-        app:rippleStartRadius="30dp"
-        app:rippleTime="1500"/>
+        app:_rippleColor="@color/tab_green"
+        app:_rippleStartRadius="30dp"
+        app:_rippleTime="1500"/>
 
     <net.avenwu.support.widget.BreathingLayout
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        app:rippleColor="@color/tab_purple" />
+        app:_rippleColor="@color/tab_purple" />
 </RelativeLayout>

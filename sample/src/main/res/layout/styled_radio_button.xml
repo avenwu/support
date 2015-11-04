@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:padding="20dp"
             android:orientation="vertical"
-            android:background="@android:color/holo_red_dark">
+            android:background="#ffcc0000">
 
             <TextView
                 android:layout_width="match_parent"
@@ -71,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
-            android:background="@android:color/holo_red_dark">
+            android:background="#ffcc0000">
 
             <net.avenwu.support.widget.FlatTabGroup
                 android:layout_width="match_parent"

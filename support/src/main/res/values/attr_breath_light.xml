@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 避免命名冲突，强行加一个前缀-->
     <declare-styleable name="BreathingLayout">
-        <attr name="rippleColor" format="color|reference" />
-        <attr name="rippleEndRadius" format="dimension|reference" />
-        <attr name="rippleStartRadius" format="dimension|reference" />
-        <attr name="rippleTime" format="integer" />
-        <attr name="autoStart" format="boolean" />
+        <attr name="_rippleColor" format="color|reference" />
+        <attr name="_rippleEndRadius" format="dimension|reference" />
+        <attr name="_rippleStartRadius" format="dimension|reference" />
+        <attr name="_rippleTime" format="integer" />
+        <attr name="_autoStart" format="boolean" />
     </declare-styleable>
 </resources>

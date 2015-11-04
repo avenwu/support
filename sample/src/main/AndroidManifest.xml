@@ -49,6 +49,8 @@
             android:name=".TypefaceActivity"
             android:label="@string/title_activity_typeface" >
         </activity>
+        <activity android:name=".CustomProgressActivity"
+            android:label="Progress"/>
     </application>
 
 </manifest>

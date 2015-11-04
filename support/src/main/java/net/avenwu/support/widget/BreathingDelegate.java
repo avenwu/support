@@ -39,20 +39,20 @@ public class BreathingDelegate {
         mTarget.setWillNotDraw(false);
         mTarget.setDrawingCacheEnabled(false);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.BreathingLayout);
-        mAutoStart = a.getBoolean(R.styleable.BreathingLayout_autoStart, true);
-        mRippleColor = a.getColor(R.styleable.BreathingLayout_rippleColor, 0xFF0099CC);
-        mRippleRadius = a.getDimensionPixelSize(R.styleable.BreathingLayout_rippleStartRadius, -1);
+        mAutoStart = a.getBoolean(R.styleable.BreathingLayout__autoStart, true);
+        mRippleColor = a.getColor(R.styleable.BreathingLayout__rippleColor, 0xFF0099CC);
+        mRippleRadius = a.getDimensionPixelSize(R.styleable.BreathingLayout__rippleStartRadius, -1);
         if (mRippleRadius == -1) {
             mRippleRadius = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getContext().getResources().getDisplayMetrics());
         }
-        mEndRadius = a.getDimensionPixelSize(R.styleable.BreathingLayout_rippleEndRadius, -1);
+        mEndRadius = a.getDimensionPixelSize(R.styleable.BreathingLayout__rippleEndRadius, -1);
         if (mEndRadius == -1) {
             mEndRadius = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, getContext().getResources().getDisplayMetrics());
         }
         if (mEndRadius <= mRippleRadius) {
             throw new IllegalStateException("rippleEndRadius can not be smaller than rippleStartRadius");
         }
-        mDuration = a.getInt(R.styleable.BreathingLayout_rippleTime, 3000);
+        mDuration = a.getInt(R.styleable.BreathingLayout__rippleTime, 3000);
         a.recycle();
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(mRippleColor);

@@ -123,6 +123,10 @@
                 style="@style/DemoItemStyle"
                 android:text="字体设置"
                 android:tag="com.avenwu.deepinandroid.TypefaceActivity"/>
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="Progress"
+                android:tag="com.avenwu.deepinandroid.CustomProgressActivity"/>
         </LinearLayout>
     </ScrollView>
 
