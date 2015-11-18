@@ -11,6 +11,11 @@ Custom Android support library, include some useful utils and widget.
 	compile 'com.github.avenwu:support:0.1.0'
 
 ##实战案例
+###TextView缩略
+通过控制文本展示实现单击展开和收缩文本，并在收缩状态显示提示图标
+
+![TextView](http://7u2jir.com1.z0.glb.clouddn.com/expand_text.gif)
+
 ###字体设置汇总
 通过不同方式实现自定义字体的设置，主要区别在于调用层
 

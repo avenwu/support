@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="10dp"
+        android:text="@string/sample_text"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="====   我是分割线   ====="
+        android:textColor="@android:color/black"/>
+
+    <net.avenwu.support.widget.ExTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:maxLines="2"
+        android:padding="10dp"
+        android:text="@string/sample_text"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:expand_collapse_default="true"
+        app:expand_indicator="@drawable/ic_arrow"/>
+</LinearLayout>

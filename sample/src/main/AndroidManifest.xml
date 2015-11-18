@@ -51,6 +51,8 @@
         </activity>
         <activity android:name=".CustomProgressActivity"
             android:label="Progress"/>
+        <activity android:name=".CustomTextViewActivity"
+            android:label="TextView"/>
     </application>
 
 </manifest>

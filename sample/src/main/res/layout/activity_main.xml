@@ -127,6 +127,10 @@
                 style="@style/DemoItemStyle"
                 android:text="Progress"
                 android:tag="com.avenwu.deepinandroid.CustomProgressActivity"/>
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="ExTextView"
+                android:tag="com.avenwu.deepinandroid.CustomTextViewActivity"/>
         </LinearLayout>
     </ScrollView>
 
