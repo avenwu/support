@@ -24,8 +24,8 @@ import java.lang.reflect.Field;
 public class ExTextView extends TextView implements View.OnClickListener, ValueAnimator.AnimatorUpdateListener {
 
     static final String TAG = ExTextView.class.getCanonicalName();
-    static final String HTML_IMG = "...<img src='icon'/>";
-    static final String HTML_NEW_LINE = "<br>";
+    static final int END = 0;
+    static final int RIGHT = 1;
 
     int mMaxHeight;
     int mCollapsedHeight;
@@ -40,6 +40,7 @@ public class ExTextView extends TextView implements View.OnClickListener, ValueA
 
     Drawable mIndicator;
     OnClickListener mOuterListener;
+    Style mStyle;
 
     public ExTextView(Context context) {
         this(context, null);
@@ -53,6 +54,15 @@ public class ExTextView extends TextView implements View.OnClickListener, ValueA
         if (mIndicator != null) {
             mIndicator.setBounds(0, 0, mIndicator.getIntrinsicWidth(), mIndicator.getIntrinsicHeight
                 ());
+        }
+        int style = a.getInt(R.styleable.ExTextView_expand_style, 0);
+        switch (style) {
+            case END:
+                mStyle = new EndStyle();
+                break;
+            case RIGHT:
+                mStyle = new RightStyle();
+                break;
         }
         a.recycle();
         reflectMaxLines();
@@ -91,26 +101,10 @@ public class ExTextView extends TextView implements View.OnClickListener, ValueA
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         if (!TextUtils.isEmpty(mFullText) && (!isLayout && isExpandable())) {
             Log.d(TAG, "onLayout reset text");
+            mStyle.onLayout(isCollapsed, this, mIndicator);
             if (isCollapsed) {
                 if (mCollapsedText == null) {
-                    StringBuilder stringBuilder = new StringBuilder();
-                    int start = 0;
-                    // 由于中英文字符等排版问题断行具有不确定性，此处强行对缩略文本断行
-                    for (int i = 0; i < mMaxLine; i++) {
-                        int end = getLayout().getLineVisibleEnd(i);
-                        String append;
-                        if (i == mMaxLine - 1) {
-                            end -= 3;
-                            append = HTML_IMG;
-                        } else {
-                            append = HTML_NEW_LINE;
-                        }
-                        stringBuilder.append(mFullText.subSequence(start, end)).append(append);
-                        start = end;
-                    }
-                    String subString = stringBuilder.toString();
-                    Log.d(TAG, "substring=" + subString);
-                    mCollapsedText = Html.fromHtml(subString, mImageGetter, null);
+                    mCollapsedText = mStyle.collapsedText(this, mIndicator, mFullText, mMaxLine);
                 }
                 super.setText(mCollapsedText, reflectCurrentBufferType());
             } else {
@@ -206,16 +200,73 @@ public class ExTextView extends TextView implements View.OnClickListener, ValueA
         return mCollapsedHeight != mMaxHeight;
     }
 
-    Html.ImageGetter mImageGetter = new Html.ImageGetter() {
-        @Override
-        public Drawable getDrawable(String source) {
-            Log.d(TAG, "source=" + source);
-            return "icon".equals(source) ? mIndicator : null;
-        }
-    };
 
     @Override
     public void setOnClickListener(OnClickListener listener) {
         mOuterListener = listener;
+    }
+
+    public interface Style {
+
+        CharSequence collapsedText(TextView textView, Drawable drawable, CharSequence text, int
+            maxLine);
+
+        void onLayout(boolean collapsed, TextView textView, Drawable drawable);
+    }
+
+    private static class EndStyle implements Style {
+        static final String HTML_IMG = "...<img src='icon'/>";
+        static final String HTML_NEW_LINE = "<br>";
+
+        @Override
+        public CharSequence collapsedText(TextView view, final Drawable drawable, CharSequence text,
+                                          int maxLine) {
+            StringBuilder stringBuilder = new StringBuilder();
+            int start = 0;
+            // 由于中英文字符等排版问题断行具有不确定性，此处强行对缩略文本断行
+            for (int i = 0; i < maxLine; i++) {
+                int end = view.getLayout().getLineVisibleEnd(i);
+                String append;
+                if (i == maxLine - 1) {
+                    end -= 3;
+                    append = HTML_IMG;
+                } else {
+                    append = HTML_NEW_LINE;
+                }
+                stringBuilder.append(text.subSequence(start, end)).append(append);
+                start = end;
+            }
+            String subString = stringBuilder.toString();
+            return Html.fromHtml(subString, new Html.ImageGetter() {
+                @Override
+                public Drawable getDrawable(String source) {
+                    return "icon".equals(source) ? drawable : null;
+                }
+            }, null);
+        }
+
+        @Override
+        public void onLayout(boolean collapsed, TextView textView, Drawable drawable) {
+        }
+    }
+
+    private static class RightStyle implements Style {
+        @Override
+        public CharSequence collapsedText(TextView view, Drawable drawable, CharSequence text,
+                                          int maxLine) {
+            int end = view.getLayout().getLineVisibleEnd(maxLine - 1);
+            return text.subSequence(0, end - 3) + "...";
+        }
+
+        @Override
+        public void onLayout(boolean collapsed, TextView textView, Drawable drawable) {
+            Drawable[] d = textView.getCompoundDrawables();
+            if (collapsed) {
+                d[2] = drawable;
+            } else {
+                d[2] = null;
+            }
+            textView.setCompoundDrawables(d[0], d[1], d[2], d[3]);
+        }
     }
 }

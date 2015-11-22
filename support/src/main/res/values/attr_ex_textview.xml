@@ -3,5 +3,9 @@
     <declare-styleable name="ExTextView">
         <attr name="expand_indicator" format="reference"/>
         <attr name="expand_collapse_default" format="boolean|reference"/>
+        <attr name="expand_style" format="enum">
+            <enum name="end" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
     </declare-styleable>
 </resources>
