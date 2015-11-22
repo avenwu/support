@@ -30,4 +30,6 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_typeface">TypefaceActivity</string>
     <string name="sample_text">作为中国IT职业在线教育第一品牌 , 极客学院（隶属于北京优亿致远无线技术有限公司）始终致力于“让学习更有效”, 帮助IT从业者高效提升职业技能。极客学院坚持以“最快”的更新速度提供“最新”的课程 , 让IT从业者更有效地学习，让每个人都能通过极客学院享受高质量的职业教育。极客学院推出了中国第一个 FlappyBird、Swift、Apple Watch等相关课程 , 几乎垄断了所有最新的技术和最热的应用课程的首发。</string>
+    <string name="sample_text_2">12345678dslkhcjsdklvhdsgvhjkdsgjvlhdsjkvhlsdkgvlsdkgvlsdgvdshhcdks,
+        。，12345678，12345cdjscjdschjkdgscqy8678，12345678，12345678123456781234567812345678，12345678，1234567812345678</string>
 </resources>

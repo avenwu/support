@@ -34,4 +34,32 @@
         android:textSize="14sp"
         app:expand_collapse_default="true"
         app:expand_indicator="@drawable/ic_arrow"/>
+
+    <net.avenwu.support.widget.ExTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/white"
+        android:maxLines="2"
+        android:padding="10dp"
+        android:text="@string/sample_text_2"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:lineSpacingMultiplier="1.2"
+        app:expand_collapse_default="true"
+        app:expand_indicator="@drawable/ic_arrow"/>
+
+    <TextView
+        android:id="@+id/tv_simple_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:lineSpacingMultiplier="1.2"
+        android:background="@android:color/white"
+        android:padding="10dp"
+        android:text="@string/sample_text_2"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"/>
+
+
 </LinearLayout>
