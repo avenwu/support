@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import net.avenwu.support.R;
 
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 
 /**
@@ -23,7 +24,7 @@ import java.lang.reflect.Field;
 public class ExTextView extends TextView implements View.OnClickListener, ValueAnimator.AnimatorUpdateListener {
 
     static final String TAG = ExTextView.class.getCanonicalName();
-    static final String HTML_IMG = "...<img src='icon'/>";
+    static final String HTML_IMG = "&nbsp;。。。&nbsp;<img src='icon'/>";
     int mMaxHeight;
     int mCollapsedHeight;
     int mMaxLine;
@@ -75,7 +76,7 @@ public class ExTextView extends TextView implements View.OnClickListener, ValueA
             if (isCollapsed) {
                 if (mCollapsedText == null) {
                     int end = getLayout().getLineVisibleEnd(mMaxLine - 1);
-                    CharSequence subString = mFullText.subSequence(0, end - 4);
+                    CharSequence subString = mFullText.subSequence(0, end - 9);
                     Log.d(TAG, "substring=" + subString + HTML_IMG);
                     mCollapsedText = Html.fromHtml(subString + HTML_IMG, mImageGetter, null);
                 }
@@ -120,6 +121,7 @@ public class ExTextView extends TextView implements View.OnClickListener, ValueA
         mFullText = text;
         mCollapsedText = null;
         isLayout = false;
+
         super.setText(text, type);
     }
 
@@ -170,4 +172,5 @@ public class ExTextView extends TextView implements View.OnClickListener, ValueA
             return "icon".equals(source) ? mIndicator : null;
         }
     };
+
 }

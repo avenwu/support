@@ -29,9 +29,16 @@
         android:background="@android:color/white"
         android:maxLines="2"
         android:padding="10dp"
-        android:text="@string/sample_text"
+        android:text="@string/sample_text_digt"
         android:textColor="@android:color/black"
         android:textSize="14sp"
         app:expand_collapse_default="true"
         app:expand_indicator="@drawable/ic_arrow"/>
+
+    <TextView
+        android:id="@+id/tv_test"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

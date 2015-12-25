@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply from: 'custom_mvn_push.gradle'
+//apply from: 'custom_mvn_push.gradle'
 
 android {
     compileSdkVersion 22
