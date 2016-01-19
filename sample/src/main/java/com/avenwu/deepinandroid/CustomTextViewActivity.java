@@ -4,27 +4,33 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.text.Spanned;
 import android.widget.TextView;
 
 /**
  * Created by chaobin on 11/18/15.
  */
 public class CustomTextViewActivity extends AppCompatActivity {
+
+    static final String HTML_IMG = "...<img src='icon'/><br>";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.textview_layout);
 
-        ((TextView) findViewById(R.id.tv_test)).setText(Html.fromHtml("219473892740218937498127472349823178461982376，40123463218。，74632781964923817649237816498723164982371649782364897231...<img src='icon'>", new Html.ImageGetter() {
+        Html.ImageGetter mImageGetter = new Html.ImageGetter() {
             @Override
             public Drawable getDrawable(String source) {
-                Drawable mIndicator = getResources().getDrawable(R.drawable.ic_arrow);
-                if (mIndicator != null) {
-                    mIndicator.setBounds(0, 0, mIndicator.getIntrinsicWidth(), mIndicator.getIntrinsicHeight
-                            ());
+                Drawable drawable = getResources().getDrawable(R.drawable.ic_arrow);
+                if (drawable != null) {
+                    drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight
+                        ());
                 }
-                return mIndicator;
+                return "icon".equals(source) ? drawable : null;
             }
-        }, null));
+        };
+        Spanned text = Html.fromHtml(getResources().getString(R.string.sample_text_2) + HTML_IMG, mImageGetter, null);
+        ((TextView) findViewById(R.id.tv_simple_text)).setText(text);
     }
 }

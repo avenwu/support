@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.text.Html;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -24,18 +25,22 @@ import java.lang.reflect.Field;
 public class ExTextView extends TextView implements View.OnClickListener, ValueAnimator.AnimatorUpdateListener {
 
     static final String TAG = ExTextView.class.getCanonicalName();
-    static final String HTML_IMG = "&nbsp;。。。&nbsp;<img src='icon'/>";
+    static final String HTML_IMG = "...<img src='icon'/>";
+    static final String HTML_NEW_LINE = "<br>";
+
     int mMaxHeight;
     int mCollapsedHeight;
     int mMaxLine;
     boolean isCollapsed;
     boolean isLayout = false;
+    boolean isMeasured = false;
 
     ValueAnimator mExpandAnimator;
     CharSequence mCollapsedText;
     CharSequence mFullText;
 
     Drawable mIndicator;
+    OnClickListener mOuterListener;
 
     public ExTextView(Context context) {
         this(context, null);
@@ -52,19 +57,32 @@ public class ExTextView extends TextView implements View.OnClickListener, ValueA
         }
         a.recycle();
         reflectMaxLines();
-        setOnClickListener(this);
+        super.setOnClickListener(this);
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        if (mMaxHeight <= 0 || mCollapsedHeight <= 0) {
-            setMaxLines(Integer.MAX_VALUE);
-            super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-            mMaxHeight = getMeasuredHeight();
+        Log.d(TAG, "onMeasure");
+        if (!TextUtils.isEmpty(mFullText) && !isMeasured) {
+            Log.d(TAG, "onMeasure isCollapsed=" + isCollapsed);
+            if (isCollapsed) {
+                setMaxLines(Integer.MAX_VALUE);
+                super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+                mMaxHeight = getMeasuredHeight();
 
-            setMaxLines(mMaxLine);
-            super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-            mCollapsedHeight = getMeasuredHeight();
+                setMaxLines(mMaxLine);
+                super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+                mCollapsedHeight = getMeasuredHeight();
+            } else {
+                setMaxLines(mMaxLine);
+                super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+                mCollapsedHeight = getMeasuredHeight();
+
+                setMaxLines(Integer.MAX_VALUE);
+                super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+                mMaxHeight = getMeasuredHeight();
+            }
+            isMeasured = true;
         } else {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         }
@@ -72,23 +90,37 @@ public class ExTextView extends TextView implements View.OnClickListener, ValueA
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        if (!isLayout && isExpandable()) {
+        if (!TextUtils.isEmpty(mFullText) && (!isLayout && isExpandable())) {
+            Log.d(TAG, "onLayout reset text");
             if (isCollapsed) {
                 if (mCollapsedText == null) {
-                    int end = getLayout().getLineVisibleEnd(mMaxLine - 1);
-                    CharSequence subString = mFullText.subSequence(0, end - 9);
-                    Log.d(TAG, "substring=" + subString + HTML_IMG);
-                    mCollapsedText = Html.fromHtml(subString + HTML_IMG, mImageGetter, null);
+                    StringBuilder stringBuilder = new StringBuilder();
+                    int start = 0;
+                    // 由于中英文字符等排版问题断行具有不确定性，此处强行对缩略文本断行
+                    for (int i = 0; i < mMaxLine; i++) {
+                        int end = getLayout().getLineVisibleEnd(i);
+                        String append;
+                        if (i == mMaxLine - 1) {
+                            end -= 3;
+                            append = HTML_IMG;
+                        } else {
+                            append = HTML_NEW_LINE;
+                        }
+                        stringBuilder.append(mFullText.subSequence(start, end)).append(append);
+                        start = end;
+                    }
+                    String subString = stringBuilder.toString();
+                    Log.d(TAG, "substring=" + subString);
+                    mCollapsedText = Html.fromHtml(subString, mImageGetter, null);
                 }
                 super.setText(mCollapsedText, reflectCurrentBufferType());
             } else {
                 super.setText(mFullText, reflectCurrentBufferType());
             }
             isLayout = true;
-            requestLayout();
-            return;
+        } else {
+            super.onLayout(changed, left, top, right, bottom);
         }
-        super.onLayout(changed, left, top, right, bottom);
     }
 
     private void reflectMaxLines() {
@@ -118,15 +150,25 @@ public class ExTextView extends TextView implements View.OnClickListener, ValueA
 
     @Override
     public void setText(CharSequence text, BufferType type) {
-        mFullText = text;
-        mCollapsedText = null;
-        isLayout = false;
-
-        super.setText(text, type);
+        //view 复用的时候会重复绑定数据
+        if (TextUtils.isEmpty(text)) {
+            super.setText(text, type);
+        } else if (text.equals(mFullText)) {
+            super.setText(isCollapsed ? mCollapsedText : mFullText, reflectCurrentBufferType());
+        } else {
+            mFullText = text;
+            mCollapsedText = null;
+            isLayout = false;
+            isMeasured = false;
+            super.setText(mFullText, type);
+        }
     }
 
     @Override
     public void onClick(View v) {
+        if (mOuterListener != null) {
+            mOuterListener.onClick(v);
+        }
         if (!isExpandable()) {
             return;
         }
@@ -173,4 +215,8 @@ public class ExTextView extends TextView implements View.OnClickListener, ValueA
         }
     };
 
+    @Override
+    public void setOnClickListener(OnClickListener listener) {
+        mOuterListener = listener;
+    }
 }
