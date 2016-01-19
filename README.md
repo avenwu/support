@@ -11,6 +11,9 @@ Custom Android support library, include some useful utils and widget.
 	compile 'com.github.avenwu:support:0.1.0'
 
 ##实战案例
+###卡片翻转优化
+![device-2016-01-19-162559.mp4.gif](images/device-2016-01-19-162559.mp4.gif)
+
 ###TextView缩略
 通过控制文本展示实现单击展开和收缩文本，并在收缩状态显示提示图标
 

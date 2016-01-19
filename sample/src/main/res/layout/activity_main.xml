@@ -136,6 +136,11 @@
                 android:text="拉幕弹层"
                 android:onClick="openFragment"
                 android:tag="com.avenwu.deepinandroid.CurtainLayoutFragment" />
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="Flip 3D"
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.FlipFragmentDemo" />
         </LinearLayout>
     </ScrollView>
 
