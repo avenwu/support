@@ -141,6 +141,18 @@
                 android:text="Flip 3D"
                 android:onClick="openFragment"
                 android:tag="com.avenwu.deepinandroid.FlipFragmentDemo" />
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="Matrix + Camera"
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.CameraMatrixFragmentDemo" />
+
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="Translation Z"
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.StackZFragment" />
+
         </LinearLayout>
     </ScrollView>
 

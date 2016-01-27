@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/tv_card_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#009688"
+        android:gravity="center"
+        android:text="Card Label"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_heightPercent="40%"
+        app:layout_marginLeftPercent="5%"
+        app:layout_marginTopPercent="10%"
+        app:layout_widthPercent="90%" />
+
+    <TextView
+        android:id="@+id/tv_card_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#4CAF50"
+        android:gravity="center"
+        android:text="Card Label"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_heightPercent="40%"
+        app:layout_marginLeftPercent="5%"
+        app:layout_marginTopPercent="25%"
+        app:layout_widthPercent="90%" />
+
+    <TextView
+        android:id="@+id/tv_card_3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#8BC34A"
+        android:gravity="center"
+        android:text="Card Label"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_heightPercent="40%"
+        app:layout_marginLeftPercent="5%"
+        app:layout_marginTopPercent="40%"
+        app:layout_widthPercent="90%" />
+
+    <TextView
+        android:id="@+id/tv_card_4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CDDC39"
+        android:gravity="center"
+        android:text="Card Label"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_heightPercent="40%"
+        app:layout_marginLeftPercent="5%"
+        app:layout_marginTopPercent="55%"
+        app:layout_widthPercent="90%" />
+</android.support.percent.PercentFrameLayout>
