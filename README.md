@@ -1,16 +1,54 @@
-#Support
+Support
+========
 
 Custom Android support library, include some useful utils and widget.
 
 	support内是自定义的一些东西，sammple中包含support的实现demo样例，
 
+Download
+-------
+Download the latest repo or grab the stable released version via Maven:
 
-**Maven**
-为方便使用和研究，可以通过gradle依赖获取support库
+Clone the master branch:
 
-	compile 'com.github.avenwu:support:0.1.0'
+```
+	git clone https://github.com/avenwu/support.git
+```
 
-##实战案例
+or Gradle:
+
+```Groovy
+	compile 'com.github.avenwu:support:0.1.1'
+```
+
+
+License
+=======
+
+    Copyright 2014 Chaobin Wu.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+
+---
+
+实战案例
+-------
+
+###卡片翻转优化
+
+![device-2016-01-19-162559.mp4.gif](images/device-2016-01-19-162559.mp4.gif)
+
 ###TextView缩略
 通过控制文本展示实现单击展开和收缩文本，并在收缩状态显示提示图标
 
@@ -77,7 +115,6 @@ residemenu是是侧滑菜单的一种，但是视觉效果更特别，此次实�
 [IndexImageView项目首页](http://avenwu.net/IndexImageView/) 
 这个项目源灵感来自搜狐视屏客户端，看好声音的时候看到人气选手的头像是一个圆形带排行数的视图，感觉有点意思，索性花了点时间自己写了一个，同时学习如何将开源项目发布到Maven Central，这样就可以通过gradle方便的获取maven依赖库。  
 ![Screenshot](https://github.com/avenwu/IndexImageView/raw/master/device-2014-10-21-164818.png)
-
 
 
 

@@ -36,6 +36,7 @@
         app:expand_indicator="@drawable/ic_arrow"
         app:expand_style="end"/>
 
+
     <net.avenwu.support.widget.ExTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

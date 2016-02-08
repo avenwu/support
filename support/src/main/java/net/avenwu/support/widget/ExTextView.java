@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import net.avenwu.support.R;
 
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 
 /**

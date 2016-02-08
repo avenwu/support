@@ -123,14 +123,36 @@
                 style="@style/DemoItemStyle"
                 android:text="字体设置"
                 android:tag="com.avenwu.deepinandroid.TypefaceActivity"/>
-            <Button
-                style="@style/DemoItemStyle"
-                android:text="Progress"
-                android:tag="com.avenwu.deepinandroid.CustomProgressActivity"/>
+            <!--<Button-->
+                <!--style="@style/DemoItemStyle"-->
+                <!--android:text="Progress"-->
+                <!--android:tag="com.avenwu.deepinandroid.CustomProgressActivity"/>-->
             <Button
                 style="@style/DemoItemStyle"
                 android:text="ExTextView"
                 android:tag="com.avenwu.deepinandroid.CustomTextViewActivity"/>
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="拉幕弹层"
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.CurtainLayoutFragment" />
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="Flip 3D"
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.FlipFragmentDemo" />
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="Matrix + Camera"
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.CameraMatrixFragmentDemo" />
+
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="Translation Z"
+                android:onClick="openFragment"
+                android:tag="com.avenwu.deepinandroid.StackZFragment" />
+
         </LinearLayout>
     </ScrollView>
 
