@@ -152,7 +152,10 @@
                 android:text="Translation Z"
                 android:onClick="openFragment"
                 android:tag="com.avenwu.deepinandroid.StackZFragment" />
-
+            <Button
+                style="@style/DemoItemStyle"
+                android:text="自定义Drawable"
+                android:tag="com.avenwu.deepinandroid.CustomDrawableDemo" />
         </LinearLayout>
     </ScrollView>
 

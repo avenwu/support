@@ -53,6 +53,8 @@
             android:label="Progress"/>
         <activity android:name=".CustomTextViewActivity"
             android:label="TextView"/>
+        <activity android:name=".CustomDrawableDemo"
+            android:label="Custom Drawable"/>
     </application>
 
 </manifest>
